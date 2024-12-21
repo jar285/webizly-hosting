@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   webizly:
-    image: kaw393939/mywebsite:master 
+    build: . 
     container_name: mywebclass 
     pull_policy: always
     restart: always
@@ -15,11 +15,11 @@ services:
       - com.centurylinklabs.watchtower.enable=true
       - traefik.enable=true
       - traefik.docker.network=traefik
-      - traefik.http.routers.mywebclass.rule=Host(`www.mywebclass.org`) || Host(`mywebclass.org`)
-      - traefik.http.routers.mywebclass.entrypoints=https
-      - traefik.http.routers.mywebclass.tls=true
-      - traefik.http.routers.mywebclass.tls.certresolver=simple-resolver
-      - traefik.http.services.mywebclass.loadbalancer.server.port=80
+      - traefik.http.routers.cosmic-connect.rule=Host(`www.cosmic-connect.org`) || Host(`cosmic-connect.org`)
+      - traefik.http.routers.cosmic-connect.entrypoints=https
+      - traefik.http.routers.cosmic-connect.tls=true
+      - traefik.http.routers.cosmic-connect.tls.certresolver=simple-resolver
+      - traefik.http.services.cosmic-connect.loadbalancer.server.port=80
 networks:
   traefik:
       name: traefik
