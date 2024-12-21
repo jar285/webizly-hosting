@@ -3,13 +3,14 @@ version: "3.8"
 services:
   postgres:
     build: .
+    image: postgres
     container_name: postgres
     restart: always
     networks:
       - backend
     environment:
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_PASSWORD= PleaseDoNotHackMe123
       - POSTGRES_DB=postgres
     ports:
       - '5432:5432'
@@ -18,3 +19,5 @@ services:
 networks:
   backend:
       external: true
+
+
